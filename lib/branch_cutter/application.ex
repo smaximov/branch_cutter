@@ -3,11 +3,13 @@ defmodule BranchCutter.Application do
 
   use Application
 
+  alias BranchCutter.Config
+
   require Logger
 
   @impl Application
   def start(_type, _args) do
-    port = 4000
+    port = Config.port()
 
     children = [
       {Plug.Adapters.Cowboy2, scheme: :http, plug: BranchCutter.Webhook, options: [port: port]}
