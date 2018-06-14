@@ -3,8 +3,13 @@ defmodule BranchCutter.Config do
 
   @spec port :: pos_integer() | no_return()
   def port do
-    {:ok, port} = Application.fetch_env(:branch_cutter, :port)
+    Application.fetch_env!(:branch_cutter, :port)
+    |> String.to_integer()
+  end
 
-    String.to_integer(port)
+  @spec github_secret :: String.t() | no_return()
+  def github_secret do
+    Application.fetch_env!(:branch_cutter, :github)
+    |> Keyword.fetch!(:secret)
   end
 end

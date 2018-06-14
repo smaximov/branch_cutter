@@ -1,5 +1,6 @@
 defmodule BranchCutter.UtilTest do
   use ExUnit.Case, async: true
+  doctest BranchCutter.Util
 
   alias BranchCutter.Util
 

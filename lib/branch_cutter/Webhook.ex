@@ -3,7 +3,10 @@ defmodule BranchCutter.Webhook do
 
   plug Plug.Parsers,
     parsers: [:json],
-    json_decoder: Jason
+    json_decoder: Jason,
+    body_reader: {BranchCutter.CacheBodyReader, :read_body, []}
+
+  plug BranchCutter.Authenticate
 
   plug BranchCutter.Logger
   plug BranchCutter.Payload
