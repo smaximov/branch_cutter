@@ -12,7 +12,7 @@ defmodule BranchCutter.Application do
     port = Config.port()
 
     children = [
-      {Plug.Adapters.Cowboy2, scheme: :http, plug: BranchCutter.Webhook, options: [port: port]}
+      {Plug.Adapters.Cowboy2, scheme: :http, plug: BranchCutter.Router, options: [port: port]}
     ]
 
     Logger.info(fn ->
