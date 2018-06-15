@@ -33,7 +33,9 @@ defmodule BranchCutter.Plug.Authenticate do
     require Logger
 
     Logger.error(fn ->
-      "Payload signature validation failed"
+      delivery = Util.get_header(conn, "x-github-delivery", "[NONE]")
+
+      "Payload signature validation failed for delivery #{delivery}"
     end)
 
     import Plug.Conn
