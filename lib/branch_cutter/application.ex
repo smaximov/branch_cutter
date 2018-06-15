@@ -5,15 +5,16 @@ defmodule BranchCutter.Application do
 
   alias BranchCutter.Config
 
-  require Logger
-
   @impl Application
   def start(_type, _args) do
     port = Config.port()
 
     children = [
-      {Plug.Adapters.Cowboy2, scheme: :http, plug: BranchCutter.Router, options: [port: port]}
+      {Plug.Adapters.Cowboy2,
+       scheme: :http, plug: BranchCutter.Plug.Router, options: [port: port]}
     ]
+
+    require Logger
 
     Logger.info(fn ->
       "Listening on http://127.0.0.1:#{port}..."

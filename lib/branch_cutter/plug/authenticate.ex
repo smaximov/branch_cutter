@@ -1,4 +1,4 @@
-defmodule BranchCutter.Authenticate do
+defmodule BranchCutter.Plug.Authenticate do
   @moduledoc """
   A plug for validating webhook payload signature.
 

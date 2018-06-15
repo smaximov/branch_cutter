@@ -1,4 +1,4 @@
-defmodule BranchCutter.Router do
+defmodule BranchCutter.Plug.Router do
   use Plug.Router
 
   plug :match
@@ -10,7 +10,7 @@ defmodule BranchCutter.Router do
     |> send_resp(200, "Nothing to do here ATM, move along!")
   end
 
-  post "/webhook", to: BranchCutter.Webhook
+  post "/webhook", to: BranchCutter.Plug.Webhook
 
   match _ do
     conn

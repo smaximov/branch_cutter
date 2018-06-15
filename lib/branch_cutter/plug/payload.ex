@@ -1,4 +1,4 @@
-defmodule BranchCutter.Payload do
+defmodule BranchCutter.Plug.Payload do
   @behaviour Plug
 
   import Plug.Conn
