@@ -12,4 +12,10 @@ defmodule BranchCutter.Config do
     Application.fetch_env!(:branch_cutter, :github)
     |> Keyword.fetch!(:secret)
   end
+
+  @spec github_token :: String.t() | no_return()
+  def github_token do
+    Application.fetch_env!(:branch_cutter, :github)
+    |> Keyword.fetch!(:token)
+  end
 end
