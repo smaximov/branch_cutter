@@ -21,9 +21,11 @@ defmodule BranchCutter.MixProject do
 
   defp deps do
     [
+      {:cowboy, "~> 2.4.0"},
       {:distillery, "~> 1.5.2", runtime: false},
       {:jason, "~> 1.0.0"},
-      {:cowboy, "~> 2.4.0"},
+      {:hackney, "~> 1.12.1"},
+      {:tesla, "~> 1.0.0"},
       {:plug, "~> 1.5.1"}
     ]
   end
