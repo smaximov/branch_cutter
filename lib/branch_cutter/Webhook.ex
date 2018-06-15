@@ -7,7 +7,5 @@ defmodule BranchCutter.Webhook do
     body_reader: {BranchCutter.CacheBodyReader, :read_body, []}
 
   plug BranchCutter.Authenticate
-
-  plug BranchCutter.Logger
   plug BranchCutter.Payload
 end
