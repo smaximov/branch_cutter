@@ -6,3 +6,7 @@ config :branch_cutter,
 config :branch_cutter, :github,
   secret: "${GITHUB_SECRET}",
   token: "${GITHUB_TOKEN}"
+
+config :branch_cutter, BranchCutter.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: "${DATABASE_URL}"

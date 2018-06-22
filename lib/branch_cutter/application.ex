@@ -10,6 +10,7 @@ defmodule BranchCutter.Application do
     port = Config.port()
 
     children = [
+      BranchCutter.Repo,
       {Plug.Adapters.Cowboy2,
        scheme: :http, plug: BranchCutter.Plug.Router, options: [port: port]}
     ]

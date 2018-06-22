@@ -23,10 +23,12 @@ defmodule BranchCutter.MixProject do
     [
       {:cowboy, "~> 2.4.0"},
       {:distillery, "~> 1.5.2", runtime: false},
+      {:ecto, "~> 2.2.10"},
       {:jason, "~> 1.0.0"},
       {:hackney, "~> 1.12.1"},
       {:tesla, "~> 1.0.0"},
-      {:plug, "~> 1.5.1"}
+      {:plug, "~> 1.5.1"},
+      {:postgrex, "~> 0.13.5"}
     ]
   end
 
