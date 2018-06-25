@@ -6,7 +6,7 @@ defmodule BranchCutter.PullRequestsTest do
   describe "insert/3" do
     alias BranchCutter.Schema.PullRequest
 
-    import PullRequests, only: [insert: 3]
+    import PullRequests, only: [insert: 3, count: 2]
 
     test "it is successful with valid values and duplicates" do
       repo = "repo"
@@ -16,8 +16,12 @@ defmodule BranchCutter.PullRequestsTest do
       assert {:ok, %PullRequest{repo: ^repo, branch: ^branch, number: ^number}} =
                insert(repo, branch, number)
 
+      assert count(repo, branch) == 1
+
       assert {:ok, %PullRequest{repo: ^repo, branch: ^branch, number: ^number}} =
                insert(repo, branch, number)
+
+      assert count(repo, branch) == 1
     end
 
     test "it fails with blank values" do
