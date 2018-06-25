@@ -5,4 +5,5 @@ config :branch_cutter,
 
 config :branch_cutter, BranchCutter.Repo,
   adapter: Ecto.Adapters.Postgres,
-  database: "branch-cutter-test"
+  database: "branch-cutter-test",
+  pool: Ecto.Adapters.SQL.Sandbox
