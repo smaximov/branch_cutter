@@ -29,7 +29,8 @@ defmodule BranchCutter.MixProject do
       {:hackney, "~> 1.12.1"},
       {:tesla, "~> 1.0.0"},
       {:plug, "~> 1.5.1"},
-      {:postgrex, "~> 0.13.5"}
+      {:postgrex, "~> 0.13.5"},
+      {:execv, "~> 0.1.2", only: [:dev]}
     ]
   end
 
